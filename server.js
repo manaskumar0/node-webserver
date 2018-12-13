@@ -4,7 +4,11 @@ const hbs = require('hbs');
 
 const fs = require('fs');
 
+//environment variable
+const port = process.env.PORT || 3000;
+
 var app = express();
+
 
 //partials //for dynamic web page
 hbs.registerPartials(__dirname + '/views/partials');
@@ -68,4 +72,6 @@ app.get('/mine', (req,res) => {
 });
 //wer have to add listener
 
-app.listen(3000,() => {console.log('for console or show on command prompt for confirmation')});
+//environment variable
+
+app.listen(port,() => {console.log(`${port}`)});
